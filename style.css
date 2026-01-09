@@ -1,0 +1,74 @@
+body {
+    font-family: 'Changa', sans-serif;
+    background-color: #0B001A;
+    color: #ffffff;
+    background-image: 
+        radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 3px),
+        radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 2px),
+        radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 3px);
+    background-size: 550px 550px, 350px 350px, 250px 250px;
+    background-position: 0 0, 40px 60px, 130px 270px;
+    animation: starMove 100s linear infinite;
+}
+
+@keyframes starMove {
+    from { background-position: 0 0, 40px 60px, 130px 270px; }
+    to { background-position: 550px 550px, 390px 410px, 680px 820px; }
+}
+
+/* Typography Fallbacks */
+.font-pixel, .pixel-font {
+    font-family: 'Silkscreen', cursive;
+}
+.font-sans {
+    font-family: 'Changa', sans-serif;
+}
+
+/* Color Fallbacks */
+.text-neonPurple { color: #D900FF; }
+.text-neonBlue { color: #00F0FF; }
+.text-neonGreen { color: #00FFA3; }
+.text-white { color: #ffffff; }
+.bg-darkBg { background-color: #0B001A; }
+.bg-cardBg { background-color: #1A0B2E; }
+
+/* Utility Fallbacks (Critical for Menu) */
+
+/* Mobile Menu Button Visibility Fallback */
+#mobile-menu-btn {
+    color: #D900FF; /* Ensure visibility on dark background */
+}
+#mobile-menu-btn:hover {
+    color: #ffffff;
+}
+
+/* Animations */
+.neon-text {
+    text-shadow: 0 0 10px rgba(217, 0, 255, 0.7), 0 0 20px rgba(0, 240, 255, 0.5);
+}
+
+.glitch-text {
+    position: relative;
+    animation: glitch-skew 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
+}
+
+@keyframes glitch-skew {
+    0% { transform: skew(0deg); }
+    20% { transform: skew(-2deg); }
+    40% { transform: skew(2deg); }
+    60% { transform: skew(-1deg); }
+    80% { transform: skew(1deg); }
+    100% { transform: skew(0deg); }
+}
+
+.glitch-hover:hover {
+    animation: glitch-skew 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
+    color: #00F0FF;
+    text-shadow: 2px 0 #D900FF, -2px 0 #00FFA3;
+}
+
+.neon-border {
+    box-shadow: 0 0 10px rgba(217, 0, 255, 0.5);
+}
+
+/* Remove products across all sections */

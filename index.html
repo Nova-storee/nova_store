@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOVA Store - بوابة الألعاب الكونية</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Changa:wght@300;400;500;700;800&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        darkBg: '#0B001A',
+                        cardBg: '#1A0B2E',
+                        neonGreen: '#00FFA3',
+                        neonPurple: '#D900FF',
+                        neonBlue: '#00F0FF',
+                        spaceBlue: '#2D1B69',
+                    },
+                    fontFamily: {
+                        sans: ['Changa', 'sans-serif'],
+                        pixel: ['Silkscreen', 'cursive'],
+                    },
+                    backgroundImage: {
+                        'space-gradient': 'radial-gradient(circle at center, #2D1B69 0%, #0B001A 100%)',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-darkBg text-white">
+
+    <!-- Navbar -->
+    <nav class="bg-cardBg/80 backdrop-blur-md sticky top-0 z-50 border-b border-white/10 shadow-[0_0_15px_rgba(188,19,254,0.3)]">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            
+            <!-- Mobile Menu Button (Right) -->
+            <button id="mobile-menu-btn" class="md:hidden text-neonPurple hover:text-white p-2 focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+
+            <div class="text-xl md:text-2xl font-bold font-pixel text-neonPurple tracking-wider flex items-center gap-2 glitch-hover">
+                <span class="text-2xl md:text-3xl">🪐</span> NOVA <span class="text-neonBlue">STORE</span>
+            </div>
+
+            <div class="hidden md:flex space-x-6 space-x-reverse">
+                <a href="index.html" class="hover:text-neonPurple transition hover:shadow-[0_0_10px_rgba(217,0,255,0.5)]">الرئيسية</a>
+                <a href="pc-games.html" class="hover:text-neonPurple transition hover:shadow-[0_0_10px_rgba(217,0,255,0.5)]">ألعاب PC</a>
+                <a href="offline-games.html" class="hover:text-neonPurple transition hover:shadow-[0_0_10px_rgba(217,0,255,0.5)]">ستيم أوفلاين</a>
+            </div>
+            
+            <div class="flex items-center space-x-2 md:space-x-4 space-x-reverse">
+                <button id="search-trigger" class="hover:text-neonBlue transition transform hover:scale-110">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+                </button>
+                <!-- Cart removed -->
+            </div>
+        </div>
+
+
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 z-[200] bg-[#0B001A] hidden flex-col w-full h-full transition-all duration-300 overflow-y-auto">
+        <!-- Header -->
+        <div class="flex items-center justify-between p-0 border-b border-white/10 bg-[#1A0B2E]">
+            <div class="px-4 py-4 text-xl font-bold text-white font-pixel">القائمة الرئيسية</div>
+            <button id="close-menu-btn" class="bg-red-600 hover:bg-red-700 text-white p-4 transition h-full flex items-center justify-center rounded-none">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+        
+        <!-- Links -->
+        <div class="flex flex-col w-full bg-[#0B001A]">
+            <a href="index.html" class="block w-full py-4 px-6 text-right text-white text-lg font-bold border-b border-white/10 hover:bg-white/5 hover:text-neonPurple transition flex items-center gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg>
+                الرئيسية
+            </a>
+            <a href="pc-games.html" class="block w-full py-4 px-6 text-right text-white text-lg font-bold border-b border-white/10 hover:bg-white/5 hover:text-neonPurple transition flex items-center gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                ألعاب PC
+            </a>
+            <a href="offline-games.html" class="block w-full py-4 px-6 text-right text-white text-lg font-bold border-b border-white/10 hover:bg-white/5 hover:text-neonPurple transition flex items-center gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 15l-3-3m0 0l3-3m-3 3h8M3 12a9 9 0 1118 0 9 9 0 01-18 0z" /></svg>
+                ستيم أوفلاين
+            </a>
+            <!-- Cart removed -->
+            
+            <!-- Extra Links -->
+            <div class="mt-4 bg-white/5">
+                <a href="#" class="block w-full py-3 px-6 text-right text-gray-400 text-base font-medium hover:text-white transition">من نحن</a>
+                <a href="#" class="block w-full py-3 px-6 text-right text-gray-400 text-base font-medium hover:text-white transition">سياسة الاستبدال والاسترجاع</a>
+                <a href="#" class="block w-full py-3 px-6 text-right text-gray-400 text-base font-medium hover:text-white transition">تواصل معنا</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="relative h-[600px] flex items-center overflow-hidden">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://cdn1.epicgames.com/spt-assets/edaff839f0734d16bc89d2ddb1dc9339/steel-magnolia-15owu.jpg" alt="Space Gaming Setup" class="w-full h-full object-cover opacity-60">
+            <div class="absolute inset-0 bg-gradient-to-t from-darkBg via-darkBg/50 to-transparent"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-darkBg via-transparent to-transparent"></div>
+        </div>
+        
+        <div class="container mx-auto px-4 relative z-10 text-center md:text-right">
+            <h1 class="text-4xl md:text-5xl lg:text-7xl font-bold mb-6 leading-tight font-pixel">
+               <span class="font-sans font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white via-neonGreen to-neonBlue drop-shadow-[0_0_10px_rgba(0,255,163,0.5)] text-5xl md:text-6xl lg:text-8xl">حيااك الله في</span> <br> <span class="text-transparent bg-clip-text bg-gradient-to-r from-neonPurple to-neonBlue neon-text"> NOVA store</span>
+            </h1>
+            <p class="text-gray-300 text-lg md:text-xl mb-8 max-w-xl border-r-4 border-neonPurple pr-4 backdrop-blur-sm bg-black/20 p-4 rounded-l-lg">
+                في NOVA Store، نجمع لك أرخص الألعاب في المجرة. استعد لرحلة لا تُنسى في عالم الألعاب.
+            </p>
+            
+        </div>
+    </section>
+
+    <!-- Promotional Banners -->
+    <section class="container mx-auto px-4 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Banner 1: PC Games -->
+            <div class="relative rounded-xl overflow-hidden group h-64 border border-white/10 shadow-[0_0_15px_rgba(57,255,20,0.2)]">
+                <img src="https://i.pinimg.com/1200x/72/af/6d/72af6d8401392e937dc4c0f9b81328e3.jpg" alt="PC Games" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+                <div class="absolute inset-0 bg-black/60 flex flex-col justify-center items-start p-8">
+                    <span class="bg-neonGreen text-black text-xs font-bold px-2 py-1 rounded mb-2">PC Games</span>
+                    <h3 class="text-2xl font-bold mb-2">ألعاب PC</h3>
+                    <p class="text-gray-300 mb-4 text-sm">أفضل الألعاب بأفضل الأسعار.</p>
+                    <a href="pc-games.html" class="text-neonGreen font-bold hover:underline">ابدأ التسوق  &larr;</a>
+                </div>
+            </div>
+            <!-- Banner 2: Offline Games -->
+            <div class="relative rounded-xl overflow-hidden group h-64 border border-white/10 shadow-[0_0_15px_rgba(217,0,255,0.2)]">
+                <img src="https://i.pinimg.com/736x/9b/8e/41/9b8e414b12d4451a78bbeb354af6783f.jpg" alt="Offline Games" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+                <div class="absolute inset-0 bg-black/60 flex flex-col justify-center items-start p-8">
+                    <span class="bg-neonPurple text-white text-xs font-bold px-2 py-1 rounded mb-2">Offline Story Mode</span>
+                    <h3 class="text-2xl font-bold mb-2">ألعاب التختيم (ستيم أوفلاين)</h3>
+                    <p class="text-gray-300 mb-4 text-sm">عش قصصاً ملحمية بسعر جنوني .</p>
+                    <a href="offline-games.html" class="text-neonPurple font-bold hover:underline">ابدأ التسوق  &larr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Products Section -->
+    <section class="container mx-auto px-4 py-12 relative">
+        <!-- Decorative Glow -->
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-3/4 bg-neonPurple/5 blur-[100px] -z-10 rounded-full"></div>
+
+        <div class="flex flex-col md:flex-row justify-between items-end mb-10 border-b border-white/10 pb-4">
+            <div class="text-right">
+                <h2 class="text-4xl md:text-6xl font-black font-sans mb-2 flex items-center gap-3 tracking-tight">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-br from-white via-neonBlue to-neonBlue drop-shadow-[0_0_20px_rgba(0,240,255,0.4)]">أحدث</span>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-bl from-white via-neonPurple to-neonPurple drop-shadow-[0_0_20px_rgba(217,0,255,0.4)]">المنتجات</span>
+                    <span class="text-yellow-400 text-5xl animate-pulse drop-shadow-[0_0_15px_rgba(255,215,0,0.6)]" style="animation-duration: 2s;">⚡</span>
+                </h2>
+                <p class="text-gray-300 text-lg font-medium font-sans max-w-md opacity-80">استكشف أحدث الإضافات الأسطورية إلى مكتبتنا.</p>
+            </div>
+            
+            <button class="hidden md:inline-flex items-center gap-2 px-6 py-2 rounded-full border border-neonPurple/30 text-neonPurple hover:bg-neonPurple hover:text-white transition-all duration-300 hover:shadow-[0_0_20px_rgba(217,0,255,0.4)] group font-bold font-pixel tracking-wider bg-cardBg/50 backdrop-blur-sm show-more-trigger">
+                <span>إظهار المزيد</span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transform group-hover:translate-y-1 transition duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+            </button>
+        </div>
+
+        <div id="latest-products-container" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
+            <!-- Dynamic Content Loading... -->
+        </div>
+
+        <!-- Mobile View All Button -->
+        <div class="mt-8 text-center md:hidden">
+            <button class="inline-flex items-center gap-2 px-8 py-3 rounded-full border border-neonPurple/30 text-neonPurple hover:bg-neonPurple hover:text-white transition-all duration-300 hover:shadow-[0_0_20px_rgba(217,0,255,0.4)] group font-bold w-full justify-center font-pixel bg-cardBg/50 backdrop-blur-sm show-more-trigger">
+                <span>إظهار المزيد</span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transform group-hover:translate-y-1 transition duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+            </button>
+        </div>
+    </section>
+
+
+    <footer class="bg-cardBg/50 pt-16 pb-8 border-t border-white/10 mt-12 backdrop-blur-sm relative z-10">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                <!-- Brand Section (Right in RTL) -->
+                <div class="text-center md:text-right">
+                    <h3 class="text-2xl font-bold font-pixel text-neonPurple mb-4 drop-shadow-[0_0_5px_rgba(188,19,254,0.5)]">NOVA Store</h3>
+                    <p class="text-gray-300 mb-6 text-lg">إذا كان للعب مجرة... فهنا مجرته 🪐</p>
+                    <div class="flex justify-center md:justify-start gap-4">
+                        <!-- TikTok Icon -->
+                        <a href="#" class="bg-white/5 hover:bg-neonPurple/20 p-3 rounded-full transition group border border-white/10 hover:border-neonPurple/50">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-300 group-hover:text-neonPurple transition" fill="currentColor" viewBox="0 0 448 512">
+                                <path d="M448 209.91a210.06 210.06 0 0 1-122.77-39.25V349.38A162.55 162.55 0 1 1 185 188.31V278.2a74.62 74.62 0 1 0 52.23 71.18V0l88 0a121.18 121.18 0 0 0 1.86 22.17h0A122.18 122.18 0 0 0 381 102.39a121.43 121.43 0 0 0 67 20.14z"/>
+                            </svg>
+                        </a>
+                        <!-- Instagram Icon -->
+                         <a href="#" class="bg-white/5 hover:bg-neonBlue/20 p-3 rounded-full transition group border border-white/10 hover:border-neonBlue/50">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-300 group-hover:text-neonBlue transition" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.5 18.5h-13a2 2 0 01-2-2v-13a2 2 0 012-2h13a2 2 0 012 2v13a2 2 0 01-2 2z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Links Section (Left in RTL) -->
+                <div class="text-center md:text-left">
+                    <h3 class="text-xl font-bold text-white mb-6 border-b border-white/10 inline-block md:block pb-2">روابط مهمة</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-neonBlue transition flex items-center justify-center md:justify-end gap-2 group glitch-hover">
+                            <span class="group-hover:-translate-x-1 transition">من نحن ؟</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-neonBlue opacity-0 group-hover:opacity-100 transition" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
+                        </a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-neonBlue transition flex items-center justify-center md:justify-end gap-2 group glitch-hover">
+                            <span class="group-hover:-translate-x-1 transition">سياسة الاستبدال والاسترجاع</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-neonBlue opacity-0 group-hover:opacity-100 transition" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
+                        </a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-neonBlue transition flex items-center justify-center md:justify-end gap-2 group glitch-hover">
+                            <span class="group-hover:-translate-x-1 transition">تواصل معنا</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-neonBlue opacity-0 group-hover:opacity-100 transition" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
+                        </a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/5 pt-8 text-center text-gray-600 text-sm">
+                <p>&copy; 2024 NOVA Store. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Discord Button -->
+    <a href="https://discord.gg/dfq8cU8bnW" target="_blank" class="fixed bottom-6 right-6 z-50 bg-cardBg/90 backdrop-blur-sm border border-neonPurple/50 text-neonPurple p-3 rounded-full shadow-[0_0_15px_rgba(217,0,255,0.3)] hover:shadow-[0_0_30px_rgba(217,0,255,0.6)] hover:border-neonPurple hover:text-white hover:scale-110 hover:rotate-6 transition-all duration-300 group flex items-center justify-center">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="currentColor" viewBox="0 0 640 512">
+            <path d="M524.531,69.836a1.5,1.5,0,0,0-.764-.7A485.065,485.065,0,0,0,404.081,32.03a1.816,1.816,0,0,0-1.923.91,337.461,337.461,0,0,0-14.9,30.6,447.848,447.848,0,0,0-134.426,0,309.541,309.541,0,0,0-15.135-30.6,1.89,1.89,0,0,0-1.924-.91A483.689,483.689,0,0,0,116.085,69.137a1.712,1.712,0,0,0-.788.676C39.068,183.651,18.186,294.69,28.43,404.354a2.016,2.016,0,0,0,1.015,1.428,522.119,522.119,0,0,0,159.261,80.181,1.869,1.869,0,0,0,2.022-1.229,392.21,392.21,0,0,0,32.359-52.934,1.871,1.871,0,0,0-1.026-2.583,326.6,326.6,0,0,1-45.969-21.826,1.874,1.874,0,0,1-.186-3.134c3.078-2.292,6.108-4.664,9.02-7.108a1.884,1.884,0,0,1,1.979-.31c96.6,44.127,201.215,44.127,296.953,0a1.888,1.888,0,0,1,1.986.31c2.923,2.444,5.952,4.816,9.035,7.108a1.873,1.873,0,0,1-.176,3.134,326.438,326.438,0,0,1-46.069,21.826,1.871,1.871,0,0,0-1.016,2.583,388.583,388.583,0,0,0,32.32,52.934,1.872,1.872,0,0,0,2.029,1.229,521.688,521.688,0,0,0,159.4-80.181,2.016,2.016,0,0,0,1.014-1.428C621.822,294.536,600.916,183.5,524.531,69.836Zm-346.5,296.8c-26.65,0-48.46-24.555-48.46-54.665s21.31-54.665,48.46-54.665c27.425,0,49.034,24.8,48.46,54.665C226.491,342.081,205.157,366.636,178.031,366.636Zm192.671,0c-26.65,0-48.46-24.555-48.46-54.665s21.31-54.665,48.46-54.665c27.425,0,49.034,24.8,48.46,54.665C419.162,342.081,397.828,366.636,370.7,366.636Z"/>
+        </svg>
+    </a>
+
+    <!-- Cart Logic -->
+    <!-- Cart Script Removed -->
+    <script src="products.js"></script>
+    <script src="main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const container = document.getElementById('latest-products-container');
+            const showMoreBtns = document.querySelectorAll('.show-more-trigger');
+            let initialLimit = 4; // Number of products to show initially
+
+            // Filter products: Offline, PC Games, or Software AND In Stock
+            const latestProducts = products.filter(product => {
+                const isTargetCategory = product.category === 'Offline Games' || product.category === 'PC Games' || product.category === 'Software';
+                const isInStock = product.inStock !== false; // Include if true or undefined
+                return isTargetCategory && isInStock;
+            });
+
+            // Function to render products
+            function renderProducts(limit) {
+                if (latestProducts.length === 0) {
+                    container.innerHTML = '<p class="text-gray-400 col-span-full text-center">لا توجد منتجات متاحة حالياً.</p>';
+                    showMoreBtns.forEach(btn => btn.parentElement.style.display = 'none'); // Hide buttons if no products
+                    return;
+                }
+
+                const toShow = limit === 'all' ? latestProducts : latestProducts.slice(0, limit);
+                
+                container.innerHTML = toShow.map(product => {
+                    let badgeColor = 'bg-neonPurple/20 text-neonPurple border border-neonPurple/30';
+                    let badgeText = 'ستيم أوفلاين';
+                    
+                    if (product.category === 'PC Games') {
+                        badgeColor = 'bg-neonGreen text-black';
+                        badgeText = 'PC Game';
+                    } else if (product.category === 'Software') {
+                         badgeColor = 'bg-neonBlue text-black';
+                         badgeText = 'برنامج';
+                    }
+
+                    return `
+                    <div class="bg-cardBg rounded-xl overflow-hidden border border-white/5 hover:border-neonPurple/50 transition duration-300 group shadow-lg hover:shadow-neonPurple/20 flex flex-col h-full animate-fade-in">
+                        <div class="relative">
+                            <a href="product-details.html?id=${product.id}">
+                                <img src="${product.image}" alt="${product.name}" class="w-full h-32 sm:h-48 object-cover group-hover:scale-110 transition duration-500">
+                            </a>
+                            <button class="absolute top-2 left-2 bg-black/50 p-1.5 rounded-full text-white hover:text-red-500 transition backdrop-blur-sm">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
+                            </button>
+                        </div>
+                        <div class="p-3 flex flex-col flex-grow">
+                            <a href="product-details.html?id=${product.id}">
+                                <h3 class="font-bold text-sm sm:text-lg mb-1 truncate text-white group-hover:text-neonPurple transition">
+                                    ${product.name}
+                                    <span class="text-[10px] ${badgeColor} px-2 py-0.5 rounded mr-2 align-middle">${badgeText}</span>
+                                </h3>
+                            </a>
+                            <p class="text-gray-400 text-xs sm:text-sm mb-2 line-clamp-1">${product.description || ''}</p>
+                            <div class="mt-auto">
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="text-neonGreen font-bold text-sm sm:text-xl drop-shadow-[0_0_5px_rgba(57,255,20,0.5)]">${product.price} ر.س</span>
+                                </div>
+                                <button class="buy-now-btn w-full bg-neonPurple text-white hover:bg-neonPurple/80 transition py-1.5 rounded-lg text-xs sm:text-sm font-bold flex items-center justify-center gap-2 shadow-[0_0_10px_rgba(217,0,255,0.3)]" data-id="${product.id}">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+                                    شراء الآن
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    `;
+                }).join('');
+
+                // Manage button visibility
+                if (limit === 'all' || toShow.length === latestProducts.length) {
+                    showMoreBtns.forEach(btn => {
+                        // Check if it's the mobile wrapper or direct button
+                        if(btn.parentElement.classList.contains('text-center') && btn.parentElement.classList.contains('md:hidden')) {
+                             btn.parentElement.style.display = 'none';
+                        } else {
+                             btn.style.display = 'none';
+                        }
+                    });
+                }
+            }
+
+            // Initial render
+            renderProducts(initialLimit);
+
+            // Button Event Listeners
+            showMoreBtns.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    renderProducts('all');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
