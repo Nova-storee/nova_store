@@ -119,6 +119,135 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // --- Badges Logic ---
+    function getBadgesHTML(product) {
+        let badgesHTML = '';
+        const badges = product.badges || [];
+        
+        // Helper to check if badge exists (case insensitive)
+        const hasBadge = (name) => badges.some(b => b.toLowerCase() === name.toLowerCase());
+
+        // 1. Special Badges (HOT, New) - Stacked at top
+        if (hasBadge('HOT')) {
+            badgesHTML += `<span class="bg-red-600 text-white text-[10px] sm:text-xs font-bold px-2 py-1 rounded">HOT</span>`;
+        }
+        if (hasBadge('New')) {
+            badgesHTML += `<span class="bg-neonBlue text-darkBg text-[10px] sm:text-xs font-bold px-2 py-1 rounded">جديد</span>`;
+        }
+        if (hasBadge('Utility')) {
+             badgesHTML += `<span class="bg-neonBlue text-darkBg text-[10px] sm:text-xs font-bold px-2 py-1 rounded">Utility</span>`;
+        }
+
+        // 2. Category/Type Badges
+        let typeBadge = '';
+        
+        if (hasBadge('Software')) {
+            typeBadge = `<span class="bg-neonBlue text-black text-[10px] sm:text-xs font-bold px-2 py-1 rounded">برنامج</span>`;
+        } else if (hasBadge('Offline') || product.category === 'Offline Games') {
+            typeBadge = `<span class="text-[10px] bg-neonPurple/20 text-neonPurple px-2 py-0.5 rounded shadow-md backdrop-blur-sm font-bold border border-neonPurple/30">ستيم أوفلاين</span>`;
+        } else if (hasBadge('حساب كامل لك')) {
+            typeBadge = `<span class="text-[10px] bg-neonPurple/20 text-neonPurple px-2 py-0.5 rounded shadow-md backdrop-blur-sm font-bold border border-neonPurple/30">حساب كامل لك</span>`;
+        } else if (product.category === 'PC Games') {
+             typeBadge = `<span class="bg-neonGreen text-black text-[10px] sm:text-xs font-bold px-2 py-1 rounded">PC Game</span>`;
+        }
+
+        badgesHTML += typeBadge;
+
+        return `
+        <div class="absolute top-2 right-2 flex flex-col gap-1 items-end z-10">
+            ${badgesHTML}
+        </div>
+        `;
+    }
+
+    // --- Latest Products Logic ---
+    function initLatestProducts() {
+        const container = document.getElementById('latest-products-container');
+        if (!container) return;
+
+        const showMoreBtns = document.querySelectorAll('.show-more-trigger');
+        let initialLimit = 4;
+
+        // Ensure products variable is available
+        if (typeof products === 'undefined') {
+            console.error('Products data not found');
+            return;
+        }
+
+        const latestProducts = products.filter(product => {
+            const isTargetCategory = product.category === 'Offline Games' || product.category === 'PC Games' || product.category === 'Software';
+            const isInStock = product.inStock !== false;
+            return isTargetCategory && isInStock;
+        });
+
+        function renderProducts(limit) {
+            if (latestProducts.length === 0) {
+                container.innerHTML = '<p class="text-gray-400 col-span-full text-center">لا توجد منتجات متاحة حالياً.</p>';
+                showMoreBtns.forEach(btn => btn.parentElement.style.display = 'none');
+                return;
+            }
+
+            const toShow = limit === 'all' ? latestProducts : latestProducts.slice(0, limit);
+            
+            container.innerHTML = toShow.map(product => {
+                const badgesHTML = getBadgesHTML(product);
+                
+                return `
+                <div class="bg-cardBg rounded-xl overflow-hidden border border-white/5 hover:border-neonPurple/50 transition duration-300 group shadow-lg hover:shadow-neonPurple/20 flex flex-col h-full animate-fade-in">
+                    <div class="relative">
+                        <a href="product-details.html?id=${product.id}">
+                            <img src="${product.image}" alt="${product.name}" class="w-full h-32 sm:h-48 object-cover group-hover:scale-110 transition duration-500">
+                        </a>
+                        <button class="absolute top-2 left-2 bg-black/50 p-1.5 rounded-full text-white hover:text-red-500 transition backdrop-blur-sm">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
+                        </button>
+                        ${badgesHTML}
+                    </div>
+                    <div class="p-3 flex flex-col flex-grow">
+                        <a href="product-details.html?id=${product.id}">
+                            <h3 class="font-bold text-sm sm:text-lg mb-1 truncate text-white group-hover:text-neonPurple transition">
+                                ${product.name}
+                            </h3>
+                        </a>
+                        <p class="text-gray-400 text-xs sm:text-sm mb-2 line-clamp-1">${product.description || ''}</p>
+                        <div class="mt-auto">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-neonGreen font-bold text-sm sm:text-xl drop-shadow-[0_0_5px_rgba(57,255,20,0.5)]">${product.price} ر.س</span>
+                            </div>
+                            <button class="buy-now-btn w-full bg-neonPurple text-white hover:bg-neonPurple/80 transition py-1.5 rounded-lg text-xs sm:text-sm font-bold flex items-center justify-center gap-2 shadow-[0_0_10px_rgba(217,0,255,0.3)]" data-id="${product.id}">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+                                شراء الآن
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                `;
+            }).join('');
+
+            if (limit === 'all' || toShow.length === latestProducts.length) {
+                showMoreBtns.forEach(btn => {
+                    if(btn.parentElement.classList.contains('text-center') && btn.parentElement.classList.contains('md:hidden')) {
+                            btn.parentElement.style.display = 'none';
+                    } else {
+                            btn.style.display = 'none';
+                    }
+                });
+            }
+        }
+
+        renderProducts(initialLimit);
+
+        showMoreBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                renderProducts('all');
+            });
+        });
+    }
+
+    // Initialize logic
+    initLatestProducts();
+
     // --- Search Logic ---
     const searchModalHTML = `
     <div id="search-modal" class="fixed inset-0 z-[300] bg-black/95 backdrop-blur-xl hidden flex items-start justify-center pt-24 transition-opacity duration-300 opacity-0">
@@ -236,16 +365,7 @@ document.addEventListener('DOMContentLoaded', () => {
             noResults.classList.add('hidden');
             
             results.forEach(product => {
-                let badgeColor = 'bg-neonPurple/20 text-neonPurple border border-neonPurple/30';
-                let badgeText = 'ستيم أوفلاين';
-                
-                if (product.category === 'PC Games') {
-                    badgeColor = 'bg-neonGreen text-black';
-                    badgeText = 'PC Game';
-                } else if (product.category === 'Software') {
-                        badgeColor = 'bg-neonBlue text-black';
-                        badgeText = 'برنامج';
-                }
+                const badgesHTML = getBadgesHTML(product);
 
                 const card = document.createElement('div');
                 card.className = 'flex bg-cardBg rounded-xl overflow-hidden border border-white/5 hover:border-neonPurple/50 transition duration-300 group shadow-lg hover:shadow-neonPurple/20 animate-fade-in h-24 sm:h-32 cursor-pointer';
@@ -258,13 +378,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 card.innerHTML = `
                     <div class="w-1/3 relative overflow-hidden">
                         <img src="${product.image}" alt="${product.name}" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        ${badgesHTML}
                     </div>
                     <div class="w-2/3 p-3 flex flex-col justify-between">
                         <div>
                             <h3 class="font-bold text-sm sm:text-base text-white group-hover:text-neonPurple transition truncate text-right">${product.name}</h3>
-                            <div class="flex justify-end mt-1">
-                                <span class="text-[10px] ${badgeColor} px-2 py-0.5 rounded">${badgeText}</span>
-                            </div>
                         </div>
                         <div class="flex justify-between items-center mt-2">
                              <button class="text-xs bg-white/10 hover:bg-neonPurple hover:text-white text-gray-300 px-3 py-1 rounded-full transition">تفاصيل</button>
