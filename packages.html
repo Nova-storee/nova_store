@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ألعاب PC - NOVA Store</title>
+    <title>البكجات - NOVA Store</title>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -60,20 +60,17 @@
 
             <div class="hidden md:flex space-x-6 space-x-reverse">
                 <a href="index.html" class="hover:text-neonPurple transition hover:shadow-[0_0_10px_rgba(217,0,255,0.5)] glitch-hover">الرئيسية</a>
-                <a href="pc-games.html" class="text-neonPurple border-b-2 border-neonPurple shadow-[0_0_10px_rgba(217,0,255,0.5)] glitch-hover">ألعاب PC</a>
+                <a href="pc-games.html" class="hover:text-neonPurple transition hover:shadow-[0_0_10px_rgba(217,0,255,0.5)] glitch-hover">ألعاب PC</a>
                 <a href="offline-games.html" class="hover:text-neonPurple transition hover:shadow-[0_0_10px_rgba(217,0,255,0.5)] glitch-hover">ستيم أوفلاين</a>
-                <a href="packages.html" class="hover:text-neonPurple transition hover:shadow-[0_0_10px_rgba(217,0,255,0.5)] glitch-hover">البكجات</a>
+                <a href="packages.html" class="text-neonPurple border-b-2 border-neonPurple shadow-[0_0_10px_rgba(217,0,255,0.5)] glitch-hover">البكجات</a>
             </div>
             
             <div class="flex items-center space-x-2 md:space-x-4 space-x-reverse">
                 <button id="search-trigger" class="hover:text-neonBlue transition transform hover:scale-110">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
                 </button>
-                <!-- Cart removed -->
             </div>
         </div>
-
-
     </nav>
 
     <!-- Mobile Menu Overlay -->
@@ -105,7 +102,6 @@
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" /></svg>
                 البكجات
             </a>
-            <!-- Cart removed -->
             
             <div class="mt-4 pt-4 border-t border-white/10">
                 <a href="#" class="block w-full py-3 px-6 text-right text-gray-400 text-sm hover:text-neonBlue transition">من نحن</a>
@@ -119,45 +115,27 @@
     <header class="bg-gradient-to-b from-spaceBlue/50 to-transparent py-16 text-center relative overflow-hidden">
         <div class="container mx-auto px-4 relative z-10">
             <h1 class="text-5xl md:text-7xl font-bold mb-6 animate-pulse" style="font-family: 'Changa', sans-serif;">
-                <span class="bg-clip-text text-transparent bg-gradient-to-r from-white to-neonGreen drop-shadow-[0_0_15px_rgba(0,255,163,0.8)]">ألعاب</span>
-                <span class="bg-clip-text text-transparent bg-gradient-to-r from-white to-neonBlue drop-shadow-[0_0_15px_rgba(0,240,255,0.8)]">PC</span>
+                <span class="bg-clip-text text-transparent bg-gradient-to-r from-white to-neonBlue drop-shadow-[0_0_15px_rgba(0,240,255,0.8)]">البكجات</span>
             </h1>
-            <p class="text-xl text-gray-300 max-w-2xl mx-auto">اكتشف أفضل ألعاب الكمبيوتر بأعلى جودة وأداء لا يضاهى.</p>
+            <p class="text-xl text-gray-300 max-w-2xl mx-auto">أفضل الألعاب، بأفضل الأسعار، في حزمة واحدة.</p>
         </div>
         <!-- Decorative Elements -->
         <div class="absolute top-0 left-0 w-full h-full pointer-events-none">
-             <div class="absolute top-10 left-10 w-32 h-32 bg-neonBlue/10 rounded-full blur-3xl"></div>
-             <div class="absolute bottom-10 right-10 w-40 h-40 bg-neonPurple/10 rounded-full blur-3xl"></div>
+             <div class="absolute top-10 right-10 w-32 h-32 bg-neonPurple/10 rounded-full blur-3xl"></div>
+             <div class="absolute bottom-10 left-10 w-40 h-40 bg-neonBlue/10 rounded-full blur-3xl"></div>
         </div>
     </header>
 
     <!-- Products Section -->
     <section class="container mx-auto px-4 py-8 flex-grow">
         <!-- Mobile Grid: 2 Columns (grid-cols-2), Desktop: 4 Columns -->
-        <div id="pc-games-container" class="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-6 min-h-[300px]">
+        <div id="packages-container" class="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-6 min-h-[300px]">
             <!-- Products will be loaded here dynamically -->
             <div class="col-span-full flex justify-center items-center h-64">
                 <div class="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-neonPurple"></div>
             </div>
         </div>
     </section>
-
-    <!-- Scripts -->
-    <script src="main.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // Initial render attempt if products are already loaded
-            if (window.products && window.products.length > 0) {
-                renderCategoryProducts('PC Games', 'pc-games-container');
-            }
-
-            // Listen for the custom event
-            document.addEventListener('productsLoaded', () => {
-                renderCategoryProducts('PC Games', 'pc-games-container');
-            });
-        });
-    </script>
-
 
     <!-- Footer -->
     <footer class="bg-cardBg/50 pt-16 pb-8 border-t border-white/10 mt-12 backdrop-blur-sm relative z-10">
@@ -166,7 +144,7 @@
                 <!-- Brand Section (Right in RTL) -->
                 <div class="text-center md:text-right">
                     <h3 class="text-2xl font-bold font-pixel text-neonPurple mb-4 drop-shadow-[0_0_5px_rgba(188,19,254,0.5)] glitch-hover">NOVA Store</h3>
-                    <p class="text-gray-300 mb-6 text-lg">إذا كان للعب وجهة... فهنا مجرته 🪐</p>
+                    <p class="text-gray-300 mb-6 text-lg">إذا كان للعب مجرة... فهنا مجرته 🪐</p>
                     <div class="flex justify-center md:justify-start gap-4">
                         <!-- TikTok Icon -->
                         <a href="#" class="bg-white/5 hover:bg-neonPurple/20 p-3 rounded-full transition group border border-white/10 hover:border-neonPurple/50">
@@ -188,15 +166,15 @@
                 <div class="text-center md:text-left">
                     <h3 class="text-xl font-bold text-white mb-6 border-b border-white/10 inline-block md:block pb-2">روابط مهمة</h3>
                     <ul class="space-y-3">
-                        <li><a href="#" class="text-gray-400 hover:text-neonBlue transition flex items-center justify-center md:justify-end gap-2 group">
+                        <li><a href="#" class="text-gray-400 hover:text-neonBlue transition flex items-center justify-center md:justify-end gap-2 group glitch-hover">
                             <span class="group-hover:-translate-x-1 transition">من نحن ؟</span>
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-neonBlue opacity-0 group-hover:opacity-100 transition" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
                         </a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-neonBlue transition flex items-center justify-center md:justify-end gap-2 group">
+                        <li><a href="#" class="text-gray-400 hover:text-neonBlue transition flex items-center justify-center md:justify-end gap-2 group glitch-hover">
                             <span class="group-hover:-translate-x-1 transition">سياسة الاستبدال والاسترجاع</span>
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-neonBlue opacity-0 group-hover:opacity-100 transition" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
                         </a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-neonBlue transition flex items-center justify-center md:justify-end gap-2 group">
+                        <li><a href="#" class="text-gray-400 hover:text-neonBlue transition flex items-center justify-center md:justify-end gap-2 group glitch-hover">
                             <span class="group-hover:-translate-x-1 transition">تواصل معنا</span>
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-neonBlue opacity-0 group-hover:opacity-100 transition" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
                         </a></li>
@@ -209,19 +187,22 @@
             </div>
         </div>
     </footer>
-
-    <!-- Cart Logic -->
+    
+    <!-- <script src="products.js"></script> -->
     <script src="main.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const render = () => {
-                if (window.renderCategoryProducts) {
-                    renderCategoryProducts('PC Games', 'pc-games-container');
-                }
-            };
-            
-            if (window.products && window.products.length > 0) render();
-            document.addEventListener('productsLoaded', render);
+        // Load Packages Products
+        document.addEventListener('productsLoaded', () => {
+            if (window.renderCategoryProducts) {
+                window.renderCategoryProducts('Packages', 'packages-container');
+            }
+        });
+
+        // Fallback in case event already fired
+        window.addEventListener('load', () => {
+            if (window.products && window.products.length > 0 && window.renderCategoryProducts) {
+                window.renderCategoryProducts('Packages', 'packages-container');
+            }
         });
     </script>
 </body>

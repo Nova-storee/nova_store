@@ -60,6 +60,7 @@
                 <a href="index.html" class="hover:text-neonPurple transition hover:shadow-[0_0_10px_rgba(217,0,255,0.5)]">الرئيسية</a>
                 <a href="pc-games.html" class="hover:text-neonPurple transition hover:shadow-[0_0_10px_rgba(217,0,255,0.5)]">ألعاب PC</a>
                 <a href="offline-games.html" class="hover:text-neonPurple transition hover:shadow-[0_0_10px_rgba(217,0,255,0.5)]">ستيم أوفلاين</a>
+                <a href="packages.html" class="hover:text-neonPurple transition hover:shadow-[0_0_10px_rgba(217,0,255,0.5)]">البكجات</a>
             </div>
             
             <div class="flex items-center space-x-2 md:space-x-4 space-x-reverse">
@@ -98,6 +99,10 @@
             <a href="offline-games.html" class="block w-full py-4 px-6 text-right text-white text-lg font-bold border-b border-white/10 hover:bg-white/5 hover:text-neonPurple transition flex items-center gap-3">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 15l-3-3m0 0l3-3m-3 3h8M3 12a9 9 0 1118 0 9 9 0 01-18 0z" /></svg>
                 ستيم أوفلاين
+            </a>
+            <a href="packages.html" class="block w-full py-4 px-6 text-right text-white text-lg font-bold border-b border-white/10 hover:bg-white/5 hover:text-neonPurple transition flex items-center gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" /></svg>
+                البكجات
             </a>
             <!-- Cart removed -->
             
@@ -148,7 +153,7 @@
                 <img src="https://i.pinimg.com/736x/9b/8e/41/9b8e414b12d4451a78bbeb354af6783f.jpg" alt="Offline Games" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
                 <div class="absolute inset-0 bg-black/60 flex flex-col justify-center items-start p-8">
                     <span class="bg-neonPurple text-white text-xs font-bold px-2 py-1 rounded mb-2">Offline Story Mode</span>
-                    <h3 class="text-2xl font-bold mb-2">ألعاب التختيم (ستيم أوفلاين)</h3>
+                    <h3 class="text-2xl font-bold mb-2">ألعاب التختيم</h3>
                     <p class="text-gray-300 mb-4 text-sm">عش قصصاً ملحمية بسعر جنوني .</p>
                     <a href="offline-games.html" class="text-neonPurple font-bold hover:underline">ابدأ التسوق  &larr;</a>
                 </div>
@@ -191,6 +196,42 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                 </svg>
             </button>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials-section" class="container mx-auto px-4 py-16 relative overflow-hidden">
+        <div class="flex flex-col items-center mb-12 text-center">
+            <h2 class="text-4xl md:text-5xl font-black font-sans mb-4 flex items-center gap-3 tracking-tight justify-center">
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-neonPurple to-white drop-shadow-[0_0_10px_rgba(217,0,255,0.4)]">وش قالوا</span>
+                <span class="text-transparent bg-clip-text bg-gradient-to-l from-neonBlue to-white drop-shadow-[0_0_10px_rgba(0,240,255,0.4)]">عنا</span>
+                <span class="text-yellow-400 text-4xl animate-bounce">💬</span>
+            </h2>
+            <p class="text-gray-300 text-lg max-w-2xl opacity-80">آراء اصدقائنا وتجربتهم معنا (:</p>
+        </div>
+
+        <!-- Slider Container -->
+        <div class="relative w-full max-w-6xl mx-auto">
+            <!-- Navigation Buttons -->
+            <div class="absolute top-1/2 -left-4 md:-left-12 transform -translate-y-1/2 z-20">
+                <button id="prev-testimonial" class="bg-cardBg/80 hover:bg-neonPurple text-white p-3 rounded-full border border-neonPurple/30 transition shadow-[0_0_15px_rgba(217,0,255,0.2)] group">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 transform group-hover:-translate-x-1 transition" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                    </svg>
+                </button>
+            </div>
+            <div class="absolute top-1/2 -right-4 md:-right-12 transform -translate-y-1/2 z-20">
+                <button id="next-testimonial" class="bg-cardBg/80 hover:bg-neonPurple text-white p-3 rounded-full border border-neonPurple/30 transition shadow-[0_0_15px_rgba(217,0,255,0.2)] group">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 transform group-hover:translate-x-1 transition" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Testimonials Track -->
+            <div id="testimonials-track" class="flex overflow-x-auto gap-6 py-8 px-4 scroll-smooth hide-scrollbar snap-x snap-mandatory">
+                <!-- JS Injected Cards -->
+            </div>
         </div>
     </section>
 
@@ -254,7 +295,7 @@
 
     <!-- Cart Logic -->
     <!-- Cart Script Removed -->
-    <script src="products.js"></script>
     <script src="main.js"></script>
+    <script src="testimonials.js"></script>
 </body>
 </html>

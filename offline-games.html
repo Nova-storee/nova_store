@@ -64,6 +64,7 @@
                 <a href="index.html" class="hover:text-neonPurple transition hover:shadow-[0_0_10px_rgba(217,0,255,0.5)] glitch-hover">الرئيسية</a>
                 <a href="pc-games.html" class="hover:text-neonPurple transition hover:shadow-[0_0_10px_rgba(217,0,255,0.5)] glitch-hover">ألعاب PC</a>
                 <a href="offline-games.html" class="text-neonPurple border-b-2 border-neonPurple shadow-[0_0_10px_rgba(217,0,255,0.5)] glitch-hover">ستيم أوفلاين</a>
+                <a href="packages.html" class="hover:text-neonPurple transition hover:shadow-[0_0_10px_rgba(217,0,255,0.5)] glitch-hover">البكجات</a>
             </div>
             
             <div class="flex items-center space-x-2 md:space-x-4 space-x-reverse">
@@ -99,8 +100,12 @@
                 ألعاب PC
             </a>
             <a href="offline-games.html" class="block w-full py-4 px-6 text-right text-white text-lg font-bold border-b border-white/10 hover:bg-white/5 hover:text-neonPurple transition flex items-center gap-3 glitch-hover">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" /></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 15l-3-3m0 0l3-3m-3 3h8M3 12a9 9 0 1118 0 9 9 0 01-18 0z" /></svg>
                 ستيم أوفلاين
+            </a>
+            <a href="packages.html" class="block w-full py-4 px-6 text-right text-white text-lg font-bold border-b border-white/10 hover:bg-white/5 hover:text-neonPurple transition flex items-center gap-3 glitch-hover">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" /></svg>
+                البكجات
             </a>
             <!-- Cart removed -->
             
@@ -131,259 +136,30 @@
     <!-- Products Section -->
     <section class="container mx-auto px-4 py-8 flex-grow">
         <!-- Mobile Grid: 2 Columns (grid-cols-2), Desktop: 4 Columns -->
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-6">
-            
-            <!-- Product 1 -->
-            <div class="bg-cardBg rounded-xl overflow-hidden border border-white/5 hover:border-neonPurple/50 transition duration-300 group shadow-lg hover:shadow-neonPurple/20 flex flex-col h-full">
-                <div class="relative">
-                    <a href="product-details.html?id=project-zomboid">
-                        <img src="https://i.pinimg.com/736x/17/cd/22/17cd220a2bdc7d3d9fb0e53055a4d401.jpg" alt="Project Zomboid" class="w-full h-32 sm:h-48 object-cover group-hover:scale-110 transition duration-500">
-                    </a>
-                    <button class="absolute top-2 left-2 bg-black/50 p-1.5 rounded-full text-white hover:text-red-500 transition backdrop-blur-sm">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
-                    </button>
-                    <span class="absolute top-2 right-2 text-[10px] bg-neonPurple/20 text-neonPurple px-2 py-0.5 rounded shadow-md backdrop-blur-sm z-10 font-bold border border-neonPurple/30">ستيم أوفلاين</span>
-                </div>
-                <div class="p-3 flex flex-col flex-grow">
-                    <a href="product-details.html?id=project-zomboid">
-                        <h3 class="font-bold text-sm sm:text-lg mb-1 truncate text-white group-hover:text-neonPurple transition">
-                            Project Zomboid
-                        </h3>
-                    </a>
-                    <p class="text-gray-400 text-xs sm:text-sm mb-2 line-clamp-1">البقاء للأقوى في عالم الزومبي</p>
-                    <div class="mt-auto">
-                        <div class="flex justify-between items-center mb-2">
-                            <span class="text-neonGreen font-bold text-sm sm:text-xl drop-shadow-[0_0_5px_rgba(57,255,20,0.5)]">1 ر.س</span>
-                        </div>
-                        <button class="buy-now-btn w-full bg-neonPurple text-white hover:bg-neonPurple/80 transition py-1.5 rounded-lg text-xs sm:text-sm font-bold flex items-center justify-center gap-2 shadow-[0_0_10px_rgba(217,0,255,0.3)]" data-id="project-zomboid">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
-                            شراء الآن
-                        </button>
-                    </div>
-                </div>
+        <div id="offline-games-container" class="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-6 min-h-[300px]">
+            <!-- Products will be loaded here dynamically -->
+            <div class="col-span-full flex justify-center items-center h-64">
+                <div class="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-neonPurple"></div>
             </div>
-
-            <!-- Product 2 -->
-            <div class="bg-cardBg rounded-xl overflow-hidden border border-white/5 hover:border-neonPurple/50 transition duration-300 group shadow-lg hover:shadow-neonPurple/20 flex flex-col h-full">
-                <div class="relative">
-                    <a href="product-details.html?id=ark-survival-evolved">
-                        <img src="https://assets.nintendo.com/image/upload/f_auto/q_auto/dpr_1.5/c_scale,w_600/store/software/switch/70010000010940/9a7907ab2658ed8fe077a2f093b773bd87e76b039fcce2a29afa36a7c72cfad4" alt="ARK: Survival Evolved" class="w-full h-32 sm:h-48 object-cover group-hover:scale-110 transition duration-500">
-                    </a>
-                    <button class="absolute top-2 left-2 bg-black/50 p-1.5 rounded-full text-white hover:text-red-500 transition backdrop-blur-sm">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
-                    </button>
-                    <span class="absolute top-2 right-2 text-[10px] bg-neonPurple/20 text-neonPurple px-2 py-0.5 rounded shadow-md backdrop-blur-sm z-10 font-bold border border-neonPurple/30">ستيم أوفلاين</span>
-                </div>
-                <div class="p-3 flex flex-col flex-grow">
-                    <a href="product-details.html?id=ark-survival-evolved">
-                        <h3 class="font-bold text-sm sm:text-lg mb-1 truncate text-white group-hover:text-neonPurple transition">
-                            ARK: Survival Evolved
-                        </h3>
-                    </a>
-                    <p class="text-gray-400 text-xs sm:text-sm mb-2 line-clamp-1">روض الديناصورات</p>
-                    <div class="mt-auto">
-                        <div class="flex justify-between items-center mb-2">
-                            <span class="text-neonGreen font-bold text-sm sm:text-xl drop-shadow-[0_0_5px_rgba(57,255,20,0.5)]">1 ر.س</span>
-                        </div>
-                        <button class="buy-now-btn w-full bg-neonPurple text-white hover:bg-neonPurple/80 transition py-1.5 rounded-lg text-xs sm:text-sm font-bold flex items-center justify-center gap-2 shadow-[0_0_10px_rgba(217,0,255,0.3)]" data-id="ark-survival-evolved">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
-                            شراء الآن
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Product 3 -->
-            <div class="bg-cardBg rounded-xl overflow-hidden border border-white/5 hover:border-neonPurple/50 transition duration-300 group shadow-lg hover:shadow-neonPurple/20 flex flex-col h-full">
-                <div class="relative">
-                    <a href="product-details.html?id=hollow-knight">
-                        <img src="https://i.pinimg.com/1200x/dc/45/3c/dc453c4c79d1f290703bd9b2d3981267.jpg" alt="Hollow Knight" class="w-full h-32 sm:h-48 object-cover group-hover:scale-110 transition duration-500">
-                    </a>
-                    <button class="absolute top-2 left-2 bg-black/50 p-1.5 rounded-full text-white hover:text-red-500 transition backdrop-blur-sm">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
-                    </button>
-                    <span class="absolute top-2 right-2 text-[10px] bg-neonPurple/20 text-neonPurple px-2 py-0.5 rounded shadow-md backdrop-blur-sm z-10 font-bold border border-neonPurple/30">ستيم أوفلاين</span>
-                </div>
-                <div class="p-3 flex flex-col flex-grow">
-                    <a href="product-details.html?id=hollow-knight">
-                        <h3 class="font-bold text-sm sm:text-lg mb-1 truncate text-white group-hover:text-neonPurple transition">
-                            Hollow Knight
-                        </h3>
-                    </a>
-                    <p class="text-gray-400 text-xs sm:text-sm mb-2 line-clamp-1">مغامرة في عالم حشري</p>
-                    <div class="mt-auto">
-                        <div class="flex justify-between items-center mb-2">
-                            <span class="text-neonGreen font-bold text-sm sm:text-xl drop-shadow-[0_0_5px_rgba(57,255,20,0.5)]">1 ر.س</span>
-                        </div>
-                        <button class="buy-now-btn w-full bg-neonPurple text-white hover:bg-neonPurple/80 transition py-1.5 rounded-lg text-xs sm:text-sm font-bold flex items-center justify-center gap-2 shadow-[0_0_10px_rgba(217,0,255,0.3)]" data-id="hollow-knight">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
-                            شراء الآن
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Product 4 (Wallpaper Engine) -->
-            <div class="bg-cardBg rounded-xl overflow-hidden border border-white/5 hover:border-neonPurple/50 transition duration-300 group shadow-lg hover:shadow-neonPurple/20 flex flex-col h-full">
-                <div class="relative">
-                    <a href="product-details.html?id=wallpaper-engine">
-                        <img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/431960/capsule_616x353.jpg" alt="Wallpaper Engine" class="w-full h-32 sm:h-48 object-cover group-hover:scale-110 transition duration-500">
-                    </a>
-                    <div class="absolute top-2 right-2 flex flex-col gap-1 items-end z-10">
-                        <span class="bg-neonBlue text-darkBg text-[10px] sm:text-xs font-bold px-2 py-1 rounded">Utility</span>
-                        <span class="text-[10px] bg-neonPurple/20 text-neonPurple px-2 py-0.5 rounded shadow-md backdrop-blur-sm font-bold border border-neonPurple/30">برنامج</span>
-                    </div>
-                    <button class="absolute top-2 left-2 bg-black/50 p-1.5 rounded-full text-white hover:text-red-500 transition backdrop-blur-sm">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
-                    </button>
-                </div>
-                <div class="p-3 flex flex-col flex-grow">
-                    <a href="product-details.html?id=wallpaper-engine">
-                        <h3 class="font-bold text-sm sm:text-lg mb-1 truncate text-white group-hover:text-neonPurple transition">
-                            Wallpaper Engine
-                        </h3>
-                    </a>
-                    <p class="text-gray-400 text-xs sm:text-sm mb-2 line-clamp-1">خلفيات حية ومتحركة</p>
-                    <div class="mt-auto">
-                        <div class="flex justify-between items-center mb-2">
-                            <span class="text-neonGreen font-bold text-sm sm:text-xl drop-shadow-[0_0_5px_rgba(57,255,20,0.5)]">1 ر.س</span>
-                        </div>
-                        <button class="buy-now-btn w-full bg-neonPurple text-white hover:bg-neonPurple/80 transition py-1.5 rounded-lg text-xs sm:text-sm font-bold flex items-center justify-center gap-2 shadow-[0_0_10px_rgba(217,0,255,0.3)]" data-id="wallpaper-engine">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
-                            شراء الآن
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Product 5 -->
-            <div class="bg-cardBg rounded-xl overflow-hidden border border-white/5 hover:border-neonPurple/50 transition duration-300 group shadow-lg hover:shadow-neonPurple/20 flex flex-col h-full">
-                <div class="relative">
-                    <a href="product-details.html?id=god-of-war">
-                        <img src="https://cdn1.epicgames.com/spt-assets/edaff839f0734d16bc89d2ddb1dc9339/steel-magnolia-15owu.jpg" alt="God of War" class="w-full h-32 sm:h-48 object-cover group-hover:scale-110 transition duration-500">
-                    </a>
-                    <div class="absolute top-2 right-2 flex flex-col gap-1 items-end z-10">
-                        <span class="bg-red-600 text-white text-[10px] sm:text-xs font-bold px-2 py-1 rounded">HOT</span>
-                        <span class="text-[10px] bg-neonPurple/20 text-neonPurple px-2 py-0.5 rounded shadow-md backdrop-blur-sm font-bold border border-neonPurple/30">ستيم أوفلاين</span>
-                    </div>
-                    <button class="absolute top-2 left-2 bg-black/50 p-1.5 rounded-full text-white hover:text-red-500 transition backdrop-blur-sm">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
-                    </button>
-                </div>
-                <div class="p-3 flex flex-col flex-grow">
-                    <a href="product-details.html?id=god-of-war">
-                        <h3 class="font-bold text-sm sm:text-lg mb-1 truncate text-white group-hover:text-neonPurple transition">
-                            God of War
-                        </h3>
-                    </a>
-                    <p class="text-gray-400 text-xs sm:text-sm mb-2 line-clamp-1">قصة ملحمية</p>
-                    <div class="mt-auto">
-                        <div class="flex justify-between items-center mb-2">
-                            <span class="text-neonGreen font-bold font-pixel text-sm sm:text-xl drop-shadow-[0_0_5px_rgba(57,255,20,0.5)]">23 ر.س</span>
-                        </div>
-                        <button class="w-full bg-gray-700 text-gray-400 cursor-not-allowed py-1.5 rounded-lg text-xs sm:text-sm font-bold flex items-center justify-center gap-2" disabled>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636" /></svg>
-                            انتهت الكمية
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Product 6 -->
-            <div class="bg-cardBg rounded-xl overflow-hidden border border-white/5 hover:border-neonPurple/50 transition duration-300 group shadow-lg hover:shadow-neonPurple/20 flex flex-col h-full">
-                <div class="relative">
-                    <a href="product-details.html?id=the-last-of-us">
-                        <img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2531310/94b5d8b3165a6fe592e406054b08a2dd24e2f848/capsule_616x353.jpg?t=1750959180" alt="The Last of Us" class="w-full h-32 sm:h-48 object-cover group-hover:scale-110 transition duration-500">
-                    </a>
-                    <button class="absolute top-2 left-2 bg-black/50 p-1.5 rounded-full text-white hover:text-red-500 transition backdrop-blur-sm">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
-                    </button>
-                    <span class="absolute top-2 right-2 text-[10px] bg-neonPurple/20 text-neonPurple px-2 py-0.5 rounded shadow-md backdrop-blur-sm z-10 font-bold border border-neonPurple/30">ستيم أوفلاين</span>
-                </div>
-                <div class="p-3 flex flex-col flex-grow">
-                    <a href="product-details.html?id=the-last-of-us">
-                        <h3 class="font-bold text-sm sm:text-lg mb-1 truncate text-white group-hover:text-neonPurple transition">
-                            The Last of Us
-                        </h3>
-                    </a>
-                    <p class="text-gray-400 text-xs sm:text-sm mb-2 line-clamp-1">دراما وبقاء</p>
-                    <div class="mt-auto">
-                        <div class="flex justify-between items-center mb-2">
-                            <span class="text-neonGreen font-bold text-sm sm:text-xl drop-shadow-[0_0_5px_rgba(57,255,20,0.5)]">19 ر.س</span>
-                        </div>
-                        <button class="w-full bg-gray-700 text-gray-400 cursor-not-allowed py-1.5 rounded-lg text-xs sm:text-sm font-bold flex items-center justify-center gap-2" disabled>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636" /></svg>
-                            انتهت الكمية
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-             <!-- Product 7 -->
-            <div class="bg-cardBg rounded-xl overflow-hidden border border-white/5 hover:border-neonPurple/50 transition duration-300 group shadow-lg hover:shadow-neonPurple/20 flex flex-col h-full">
-                <div class="relative">
-                    <a href="product-details.html?id=red-dead-redemption-2">
-                        <img src="https://dailyspin.id/wp-content/uploads/2021/02/RDR-2-R.jpg" alt="Red Dead 2" class="w-full h-32 sm:h-48 object-cover group-hover:scale-110 transition duration-500">
-                    </a>
-                    <div class="absolute top-2 right-2 flex flex-col gap-1 items-end z-10">
-                        <span class="bg-neonBlue text-darkBg text-[10px] sm:text-xs font-bold px-2 py-1 rounded">جديد</span>
-                        <span class="text-[10px] bg-neonPurple/20 text-neonPurple px-2 py-0.5 rounded shadow-md backdrop-blur-sm font-bold border border-neonPurple/30">ستيم أوفلاين</span>
-                    </div>
-                    <button class="absolute top-2 left-2 bg-black/50 p-1.5 rounded-full text-white hover:text-red-500 transition backdrop-blur-sm">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
-                    </button>
-                </div>
-                <div class="p-3 flex flex-col flex-grow">
-                    <a href="product-details.html?id=red-dead-redemption-2">
-                        <h3 class="font-bold text-sm sm:text-lg mb-1 truncate text-white group-hover:text-neonPurple transition">
-                            Red Dead 2
-                        </h3>
-                    </a>
-                    <p class="text-gray-400 text-xs sm:text-sm mb-2 line-clamp-1">عالم مفتوح</p>
-                    <div class="mt-auto">
-                        <div class="flex justify-between items-center mb-2">
-                            <span class="text-neonGreen font-bold font-pixel text-sm sm:text-xl drop-shadow-[0_0_5px_rgba(57,255,20,0.5)]">24 ر.س</span>
-                        </div>
-                        <button class="w-full bg-gray-700 text-gray-400 cursor-not-allowed py-1.5 rounded-lg text-xs sm:text-sm font-bold flex items-center justify-center gap-2" disabled>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636" /></svg>
-                            انتهت الكمية
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Product 8 -->
-            <div class="bg-cardBg rounded-xl overflow-hidden border border-white/5 hover:border-neonPurple/50 transition duration-300 group shadow-lg hover:shadow-neonPurple/20 flex flex-col h-full">
-                <div class="relative">
-                    <a href="product-details.html?id=horizon-forbidden-west">
-                        <img src="https://static0.colliderimages.com/wordpress/wp-content/uploads/2021/05/Horizon-Forbidden-West.jpg?w=1200&h=675&fit=crop" alt="Horizon" class="w-full h-32 sm:h-48 object-cover group-hover:scale-110 transition duration-500">
-                    </a>
-                    <button class="absolute top-2 left-2 bg-black/50 p-1.5 rounded-full text-white hover:text-red-500 transition backdrop-blur-sm">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
-                    </button>
-                    <span class="absolute top-2 right-2 text-[10px] bg-neonPurple/20 text-neonPurple px-2 py-0.5 rounded shadow-md backdrop-blur-sm z-10 font-bold border border-neonPurple/30">ستيم أوفلاين</span>
-                </div>
-                <div class="p-3 flex flex-col flex-grow">
-                    <a href="product-details.html?id=horizon-forbidden-west">
-                        <h3 class="font-bold text-sm sm:text-lg mb-1 truncate text-white group-hover:text-neonPurple transition">
-                            Horizon Forbidden West
-                        </h3>
-                    </a>
-                    <p class="text-gray-400 text-xs sm:text-sm mb-2 line-clamp-1">مغامرة وخيال</p>
-                    <div class="mt-auto">
-                        <div class="flex justify-between items-center mb-2">
-                            <span class="text-neonGreen font-bold text-sm sm:text-xl drop-shadow-[0_0_5px_rgba(57,255,20,0.5)]">12 ر.س</span>
-                        </div>
-                        <button class="w-full bg-gray-700 text-gray-400 cursor-not-allowed py-1.5 rounded-lg text-xs sm:text-sm font-bold flex items-center justify-center gap-2" disabled>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636" /></svg>
-                            انتهت الكمية
-                        </button>
-                    </div>
-                </div>
-            </div>
-
         </div>
     </section>
+
+    <!-- Scripts -->
+    <script src="main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initial render attempt if products are already loaded
+            if (window.products && window.products.length > 0) {
+                renderCategoryProducts('Offline Games', 'offline-games-container');
+            }
+
+            // Listen for the custom event
+            document.addEventListener('productsLoaded', () => {
+                renderCategoryProducts('Offline Games', 'offline-games-container');
+            });
+        });
+    </script>
+
 
     <!-- Footer -->
     <footer class="bg-cardBg/50 pt-16 pb-8 border-t border-white/10 mt-12 backdrop-blur-sm relative z-10">
@@ -439,5 +215,23 @@
     <!-- Cart Logic -->
     
     <script src="main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Function to render products
+            const render = () => {
+                if (window.renderCategoryProducts) {
+                    renderCategoryProducts('Offline Games', 'offline-games-container');
+                }
+            };
+
+            // Try to render immediately if products are ready
+            if (window.products && window.products.length > 0) {
+                render();
+            }
+
+            // Listen for load event
+            document.addEventListener('productsLoaded', render);
+        });
+    </script>
 </body>
 </html>

@@ -62,6 +62,7 @@
                 <a href="index.html" class="hover:text-neonPurple transition hover:shadow-[0_0_10px_rgba(217,0,255,0.5)] glitch-hover">الرئيسية</a>
                 <a href="pc-games.html" class="hover:text-neonPurple transition hover:shadow-[0_0_10px_rgba(217,0,255,0.5)] glitch-hover">ألعاب PC</a>
                 <a href="offline-games.html" class="hover:text-neonPurple transition hover:shadow-[0_0_10px_rgba(217,0,255,0.5)] glitch-hover">ستيم أوفلاين</a>
+                <a href="packages.html" class="hover:text-neonPurple transition hover:shadow-[0_0_10px_rgba(217,0,255,0.5)] glitch-hover">البكجات</a>
             </div>
             
             <div class="flex items-center space-x-2 md:space-x-4 space-x-reverse">
@@ -97,6 +98,10 @@
             <a href="offline-games.html" class="block w-full py-4 px-6 text-right text-white text-lg font-bold border-b border-white/10 hover:bg-white/5 hover:text-neonPurple transition flex items-center gap-3 glitch-hover">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" /></svg>
                 ستيم أوفلاين
+            </a>
+            <a href="packages.html" class="block w-full py-4 px-6 text-right text-white text-lg font-bold border-b border-white/10 hover:bg-white/5 hover:text-neonPurple transition flex items-center gap-3 glitch-hover">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" /></svg>
+                البكجات
             </a>
             <!-- Cart removed -->
         </div>
@@ -160,12 +165,13 @@
     </footer>
 
     <!-- Scripts -->
-    <script src="products.js"></script>
+    <!-- Scripts -->
+    <!-- products.js removed -->
     <!-- Cart Script Removed -->
     <script src="main.js"></script>
     <script>
         // Product Details Logic
-        document.addEventListener('DOMContentLoaded', () => {
+        function renderProductDetails() {
             const urlParams = new URLSearchParams(window.location.search);
             const productId = urlParams.get('id');
             const container = document.getElementById('product-container');
@@ -175,7 +181,7 @@
                 return;
             }
 
-            const product = getProductById(productId);
+            const product = window.getProductById ? window.getProductById(productId) : (window.products ? window.products.find(p => p.id === productId) : null);
 
             if (!product) {
                 container.innerHTML = '<div class="text-center text-red-500 text-xl font-bold py-20">المنتج غير موجود! <br> <a href="index.html" class="text-neonBlue hover:underline mt-4 block">العودة للرئيسية</a></div>';
@@ -212,11 +218,7 @@
                         <div class="relative group">
                             <div class="absolute inset-0 bg-neonPurple/20 blur-2xl rounded-xl group-hover:bg-neonPurple/30 transition duration-500"></div>
                             <img src="${product.image}" alt="${product.name}" class="relative w-full rounded-2xl shadow-2xl border border-white/10 group-hover:scale-[1.02] transition duration-500 z-10 object-cover h-[400px] lg:h-[500px]">
-                            <div class="absolute top-4 right-4 z-20 flex gap-2">
-                                ${product.badges.map(badge => `
-                                    <span class="bg-red-600 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg border border-white/10">${badge}</span>
-                                `).join('')}
-                            </div>
+                            <!-- Badges removed -->
                         </div>
 
                         <!-- Info Section -->
@@ -400,6 +402,14 @@
                     </div>
                 </div>
             `;
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            if (window.products && window.products.length > 0) {
+                renderProductDetails();
+            } else {
+                document.addEventListener('productsLoaded', renderProductDetails);
+            }
         });
     </script>
 </body>

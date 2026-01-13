@@ -1,0 +1,37 @@
+[
+    {
+        "id": 1,
+        "name": "ارجوان عبدالله",
+        "avatar": "https://randomuser.me/api/portraits/women/44.jpg",
+        "rating": 5,
+        "text": "احلى متجر في العالم حرفيا احسن متجر شريت منه والله يوفقهم يارب العالمين"
+    },
+    {
+        "id": 2,
+        "name": "لمياء علي",
+        "avatar": "https://randomuser.me/api/portraits/women/68.jpg",
+        "rating": 5,
+        "text": "مهي اول مره ولا اخره مره اطلب منهم اجمل متجر واحلى ناس مهما تي اللعب ستيم مالك الا هم"
+    },
+    {
+        "id": 3,
+        "name": "سعود العتيبي",
+        "avatar": "https://randomuser.me/api/portraits/men/32.jpg",
+        "rating": 5,
+        "text": "أفضل متجر اشتريت منه على الإطلاق، خدمة العملاء ممتازة، يستجيبون بسرعة ويشرحون كيفية تفعيل الحساب بوضوح. بارك الله فيكم و يعطيكم العافية على المتجر الاسطوري..."
+    },
+    {
+        "id": 4,
+        "name": "محمد القحطاني",
+        "avatar": "https://randomuser.me/api/portraits/men/46.jpg",
+        "rating": 5,
+        "text": "سعر ممتاز وتفعيل فوري، انصح الكل يتعامل معهم."
+    },
+    {
+        "id": 5,
+        "name": "نورة سعد",
+        "avatar": "https://randomuser.me/api/portraits/women/65.jpg",
+        "rating": 5,
+        "text": "خدمة سريعة وممتازة، شكراً لكم."
+    }
+]
